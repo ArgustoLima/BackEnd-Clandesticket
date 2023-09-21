@@ -1,6 +1,6 @@
-package com.example.clandesticket.controller;
+package com.example.reuso.controller;
 
-import com.example.clandesticket.usuario.*;
+import com.example.reuso.usuario.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -25,7 +25,7 @@ public class UsuarioController {
 
     @GetMapping
     public Page<DadosListagemUsuario> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
-        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemUsuario::new);
+        return repository.findAll(paginacao).map(DadosListagemUsuario::new);
     }
 
     @PutMapping
@@ -38,8 +38,7 @@ public class UsuarioController {
     @DeleteMapping("/{id}")
     @Transactional
     public void excluir(@PathVariable Long id) {
-        var usuario =  repository.getReferenceById(id);
-        usuario.excluir();
+      repository.deleteById(id);
     }
 
 }

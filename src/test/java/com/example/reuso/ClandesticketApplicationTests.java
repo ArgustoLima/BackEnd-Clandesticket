@@ -1,4 +1,4 @@
-package com.example.clandesticket;
+package com.example.reuso;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

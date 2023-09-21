@@ -1,4 +1,4 @@
-package com.example.clandesticket.usuario;
+package com.example.reuso.usuario;
 
 import jakarta.validation.constraints.NotNull;
 
@@ -6,11 +6,8 @@ public record DadosAtualizacaoUsuario(
         @NotNull
         Long id,
         String nome,
-        String sobrenome,
         String cpf,
-        String email,
         String senha,
-        String telefone,
-        String endereco) {
+        String repetirsenha) {
 
 }
