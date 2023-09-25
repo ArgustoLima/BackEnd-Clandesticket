@@ -3,8 +3,6 @@ package com.example.reuso.controller;
 import com.example.reuso.usuario.Usuario;
 import com.example.reuso.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;

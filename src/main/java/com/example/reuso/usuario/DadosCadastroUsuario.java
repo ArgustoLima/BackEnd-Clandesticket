@@ -12,5 +12,5 @@ public record DadosCadastroUsuario(
         @NotBlank
         String senha,
         @NotBlank
-        String repetirsenha) {
+        String repetir_senha) {
 }

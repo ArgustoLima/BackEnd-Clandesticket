@@ -23,7 +23,7 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String senha;
-    private String repetirsenha;
+    private String repetir_senha;
 
     @OneToMany(mappedBy = "usuario")
     private List<Itens> itens;
@@ -35,7 +35,7 @@ public class Usuario {
         this.nome = dados.nome();
         this.cpf = dados.cpf();
         this.senha = dados.senha();
-        this.repetirsenha = dados.senha();
+        this.repetir_senha = dados.repetir_senha();
     }
 
     public void atualizarInformacoes(DadosAtualizacaoUsuario dados) {
@@ -48,8 +48,8 @@ public class Usuario {
         if (dados.senha() != null) {
             this.senha = dados.senha();
         }
-        if (dados.repetirsenha() != null) {
-            this.repetirsenha = dados.repetirsenha();
+        if (dados.repetir_senha() != null) {
+            this.repetir_senha = dados.repetir_senha();
         }
     }
 }

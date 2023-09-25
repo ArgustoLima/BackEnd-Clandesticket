@@ -8,7 +8,5 @@ import java.util.Optional;
 
 public interface ItensRepository extends JpaRepository<Itens, Long> {
     Page<Itens> findAll(Pageable paginacao);
-
     Optional<Itens> findById(Long id);
-
 }

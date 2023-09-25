@@ -3,6 +3,6 @@ create table usuarios (
     nome varchar(100) not null,
     cpf varchar(11) not null unique,
     senha varchar(20) not null,
-    repetirsenha varchar(20) not null,
+    repetir_senha varchar(20) not null,
     primary key(id)
 );

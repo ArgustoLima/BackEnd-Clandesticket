@@ -1,6 +1,5 @@
 package com.example.reuso.controller;
 
-import com.example.reuso.itens.DadosAtualizacaoItens;
 import com.example.reuso.pagamento.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
@@ -27,6 +28,11 @@ public class PagamentoController {
     @GetMapping
     public Page<DadosListagemPagamento> listar(@PageableDefault(sort = {"id"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemPagamento::new);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Pagamento> buscarPorId(@PathVariable Long id) {
+        return repository.findById(id);
     }
 
     @PutMapping

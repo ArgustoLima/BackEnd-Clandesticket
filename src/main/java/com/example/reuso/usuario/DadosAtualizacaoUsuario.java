@@ -8,6 +8,6 @@ public record DadosAtualizacaoUsuario(
         String nome,
         String cpf,
         String senha,
-        String repetirsenha) {
+        String repetir_senha) {
 
 }
