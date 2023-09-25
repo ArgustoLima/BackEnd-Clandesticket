@@ -25,7 +25,7 @@ public class PagamentoController {
     }
 
     @GetMapping
-    public Page<DadosListagemPagamento> listar(@PageableDefault(size = 10) Pageable paginacao) {
+    public Page<DadosListagemPagamento> listar(@PageableDefault(sort = {"id"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemPagamento::new);
     }
 

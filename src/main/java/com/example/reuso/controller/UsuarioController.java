@@ -9,6 +9,8 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("usuarios")
@@ -24,8 +26,13 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public Page<DadosListagemUsuario> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
+    public Page<DadosListagemUsuario> listar(@PageableDefault(sort = {"nome"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemUsuario::new);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Usuario> buscarPorId(@PathVariable Long id) {
+        return repository.findById(id);
     }
 
     @PutMapping

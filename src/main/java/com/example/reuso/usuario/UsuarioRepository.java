@@ -8,4 +8,8 @@ import java.util.Optional;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     Page<Usuario> findAll(Pageable paginacao);
+
+    Usuario findByCpfAndSenha(String cpf, String senha);
+
+    Optional<Usuario> findById(Long id);
 }

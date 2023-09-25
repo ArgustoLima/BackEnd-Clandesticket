@@ -21,7 +21,7 @@ public class Pagamento {
     @Enumerated(EnumType.STRING)
     private Tipo tipo;
 
-    private String numero_cartao ;
+    private String numero_cartao;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
